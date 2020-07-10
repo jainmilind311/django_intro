@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- cdn -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- local file -->
+    <link rel="stylesheet" href=" {% static 'app_1/css/style.css' %}">
+
+    <title>app_1 Database</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>These are the details of access records!</h1>
+
+        {% if access_rec %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Last Access</th>
+                    <th>Topic Name</th>
+                    <th>URL of the site</th>
+                </tr>
+                
+            </thead>
+            
+            <tbody>
+                {% for record in access_rec %}
+                <tr>
+                    <td> {{ record.webpage.name }} </td>
+                    <td> {{ record.last_access }} </td>
+                    <td> {{ record.webpage.topic.topic_name }} </td>
+                    <td> <a href="#"> {{ record.webpage.url }} </a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% endif %}
+
+    </div>
+
+</body>
+</html>

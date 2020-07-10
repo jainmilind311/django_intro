@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>Home | Project</title>
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Welcome</h1>
+            <p class="lead">It's Great to see you here! Register today</p>
+            <a href="{% url 'my_app:register' %}">Register</a>
+            <br>
+            <a href="{% url 'admin:index' %}">Enrolled Users(admin only)</a>
+        </div>
+    </div>
+
+     <a href="{% url 'another_app:another' %}">another</a>
+      
+</body>
+</html>

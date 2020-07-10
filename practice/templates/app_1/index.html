@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- cdn -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- local file -->
+    <link rel="stylesheet" href=" {% static 'app_1/css/style.css' %}">
+    
+    <title>app_1 index</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Hello There! You've come this far</h1>
+        {{insert_me}}
+        <h3>The below image is inserted using template tagging</h3>
+        <img src="{% static 'app_1/images/a.jpg' %}" alt="">
+    </div>
+        
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% extends "handler/base.html" %}
+
+{% block title %} 
+Register | MySite
+{% endblock %}
+
+
+{% block body %}
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="id_nickname">NickName</label>
+        {{form.nickname}}
+    </div>
+
+    <div class="form-group">
+        <label for="id_fav_dish">Favourite Dish</label>
+        {{form.fav_dish}}
+    </div>
+
+    <div class="form-group">
+        <label for="id_contact_no">Contact No.</label>
+        {{form.contact_no}}
+    </div>
+
+    <div class="form-group">
+      <label for="id_email">Email address</label>
+      {{form.email}}
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+{% endblock %}

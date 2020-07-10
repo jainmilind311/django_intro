@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends "handler/base.html" %}
+
+{% block title %} 
+    Home | MySite
+{% endblock %}
+
+
+{% block body %}
+<div style="margin-top: 10px;" class="jumbotron">
+    <h1 class="display-4">Welcome!</h1>
+    <p class="lead">We are coming soon to your locality as well</p>
+    <hr class="my-4">
+    <p>Register Fast!!!</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="{% url 'handler:register' %}" role="button">Register</a>
+    </p>
+    <a href="{% url 'admin:index' %}">View Users(admin only)</a>
+  </div>
+{% endblock %}

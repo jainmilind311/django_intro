@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>Register | Project</title>
+</head>
+<body>
+    <h1>
+        Register my bois!
+    </h1>
+
+    <div class="container">
+
+        <form method="POST">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="id_first_name">First Name</label>
+                {{form.first_name}}
+            </div>
+            <div class="form-group">
+                <label for="id_last_name">Last Name</label>
+                {{form.last_name}}
+            </div> 
+            <div class="form-group">
+                <label for="id_email">Email address</label>
+                {{form.email}}
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Register</button>
+          </form>
+
+    </div>
+    
+</body>
+</html>
+

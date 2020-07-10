@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- cdn -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>Data</title>
+</head>
+<body>
+    <h1>List of Users on our site</h1>
+    {% if users %}
+
+    <ol>
+        {% for usr in users %}
+        <li>User Info</li>
+        <ul>
+            <li>First Name: {{ usr.first_name }}</li>
+            <li>Last Name: {{ usr.last_name }}</li>
+            <li>Email: {{ usr.email }}</li>
+        </ul>
+        {% endfor %}
+    </ol>
+    
+    {% endif %}
+
+</body>
+</html>

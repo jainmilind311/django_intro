@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- cdn -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    
+    
+    <title>app_1 index</title>
+</head>
+<body>
+    <h1>Fill Up the form!</h1>
+
+
+    <div class="container">
+        <form action="", method="POST">
+            
+            {% csrf_token %}
+
+
+            <div class="form-group">
+                <label for="id_name">Name</label>
+                {{form.name}}
+            </div>
+            <div class="form-group">
+              <label for="id_email">Email address</label>
+              {{form.email}}
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="id_comments">Comments</label>
+                {{form.comments}}
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+    
+        
+</body>
+</html>
