@@ -5,9 +5,13 @@ from updater.models import Item
 class TaskForm(forms.ModelForm):
     class Meta:
         model = Item
-        field = '__all__'
+        fields = '__all__'
         widgets = {
-            'task' : forms.Textarea(attrs={
+            'task' : forms.TextInput(attrs={
                 'class' :'form-control'
+            }), 
+            'date' : forms.DateInput(attrs={
+                'class' : 'form-control', 
+                'type': 'date'
             })
         }
