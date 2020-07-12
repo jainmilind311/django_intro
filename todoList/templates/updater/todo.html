@@ -6,42 +6,61 @@
 
 
 {% block body %} 
-    
+
+<h1 id="main-header"> To do List</h1>
+<hr>
+
 <form method='POST'>
     {% csrf_token %}   
-    <div class="form-group">
+    <div class="form-group task-input">
       <label for="id_task">Add Task</label>
       {{task_form.task}}
     </div>
-    <div class="form-group">
+    <div class="form-group date-input">
         <label for="id_date">Completion date</label>
         {{task_form.date}}
       </div>
-    <button type="submit" class="btn btn-primary" name="new_task_added" value="New task value">Submit</button>
+    <button type="submit" class="btn btn-success" name="new_task_added" value="New task value">Add</button>
 </form>
     
 
 <hr>
 
+
+<h6>Today's date : {{date_today}}</h6>
 <h2>Current Tasks!</h2>
 
-{% if current_tasks %}
- <ul>
-    {% for task_name in current_tasks %}
-    <li>
-        {{task_name.task}}
-        {{task_names.date}}
-        <form method='POST'>
-            {% csrf_token %}   
-            <button type="submit" class="btn btn-primary" name="delete_task" value="{{task_name.task}}">Delete</button>
-        </form>
-        
-    </li>
-    {% endfor %}
- </ul>
- {% else %}
- <h3>No Tasks yet</h3>
- {% endif %}
+  {% if current_tasks %}
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Task</th>
+        <th scope="col">Due Date</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for task_name in current_tasks %}
+      <tr>
+        <td>{{task_name.task}}</td>
+        <td>{{task_name.date}}</td>
+        <td>
+          <form method='POST'>
+            {% csrf_token %}
+            <button type="submit" name="delete_task" value="{{task_name.task}}">Delete</button>
+          </form>
+        </td>
+      </tr>
+
+      {% endfor %}
+    </tbody>
+  </table>
+  
+  {% else %}
+  <h3>No Tasks yet</h3>
+  {% endif %}
+
 
 {% endblock %}
         

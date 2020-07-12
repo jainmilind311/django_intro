@@ -11,7 +11,7 @@ class TaskForm(forms.ModelForm):
                 'class' :'form-control'
             }), 
             'date' : forms.DateInput(attrs={
-                'class' : 'form-control', 
+                'class' : 'form-control ', 
                 'type': 'date'
             })
         }
