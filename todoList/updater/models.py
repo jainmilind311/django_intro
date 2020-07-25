@@ -10,4 +10,14 @@ class Item(models.Model):
 
 
 
+class Note(models.Model):
+    note = models.CharField(max_length=1000)
+    date = models.DateField()
 
+    def __str__(self):
+        len_note = len(self.note)
+        if len_note > 10:
+            return self.note[0:10]
+        else:
+            return self.note
+    

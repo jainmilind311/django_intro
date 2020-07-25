@@ -5,6 +5,7 @@ app_name = 'updater'
 
 urlpatterns = [
     path('', views.index, name='index'), 
-    path('todo/', views.to_do, name='todoList')
+    path('todo/', views.to_do, name='todoList'), 
+    path('notes', views.notes, name='notes'), 
 
 ]

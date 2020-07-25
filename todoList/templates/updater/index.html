@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+{% extends "updater/base.html" %}
+
+{% block title %} Home {% endblock %}
+
+
+{% block body %} 
+
+<h1>
+    <a href="{% url 'updater:todoList' %}">To do</a>
+</h1>
+
+<h1>
+    <a href="{% url 'updater:notes' %}">Notes</a>
+</h1>
+
+
+
+{% endblock %}
+        

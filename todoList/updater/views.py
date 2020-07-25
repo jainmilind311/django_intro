@@ -6,7 +6,8 @@ from datetime import date
 # Create your views here.
 
 def index(request):
-    return to_do(request)
+    return render(request, 'updater/index.html')
+
 
 
 def to_do(request):
@@ -18,7 +19,7 @@ def to_do(request):
             new_task = forms.TaskForm(request.POST)
             if new_task.is_valid():
                 added_task = new_task.save(commit=True)
-
+                
 
         else:
             task_to_delete = request.POST.get('delete_task')
@@ -35,7 +36,9 @@ def to_do(request):
     return render(request, 'updater/todo.html', context=my_dict)
 
         
-
+def notes(request):
+    
+    return render(request, 'updater/notes.html')
 
 
 
