@@ -19,28 +19,28 @@ def to_do(request):
             new_task = forms.TaskForm(request.POST)
             if new_task.is_valid():
                 added_task = new_task.save(commit=True)
-                
+
+                ##For changing the value of field of django form before saving it into databse
+                # added_task = new_task.save()
+                # added_task.task = "Default!"
+                # added_task.save()
+
 
         else:
             task_to_delete = request.POST.get('delete_task')
             task = Item.objects.get(task=task_to_delete)
             task.delete()
 
-    
+
     new_task = forms.TaskForm()
 
     current_tasks = Item.objects.order_by('date')
-    
+
     date_today = date.today()
     my_dict = {'task_form': new_task, 'current_tasks': current_tasks, 'date_today': date_today}
     return render(request, 'updater/todo.html', context=my_dict)
 
-        
+
 def notes(request):
-    
+
     return render(request, 'updater/notes.html')
-
-
-
-
-    

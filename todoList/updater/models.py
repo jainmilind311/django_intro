@@ -20,4 +20,3 @@ class Note(models.Model):
             return self.note[0:10]
         else:
             return self.note
-    

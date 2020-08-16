@@ -7,11 +7,11 @@ class TaskForm(forms.ModelForm):
         model = Item
         fields = '__all__'
         widgets = {
-            'task' : forms.TextInput(attrs={
-                'class' :'form-control'
-            }), 
-            'date' : forms.DateInput(attrs={
-                'class' : 'form-control ', 
+            'task': forms.TextInput(attrs={
+                'class': 'form-control'
+            }),
+            'date': forms.DateInput(attrs={
+                'class': 'form-control ',
                 'type': 'date'
             })
         }
@@ -19,10 +19,10 @@ class TaskForm(forms.ModelForm):
 
 class NoteForm(forms.ModelForm):
     class Meta:
-        model =  Note
+        model = Note
         fields = ('note',)
         widgets = {
             'note': forms.Textarea(attrs={
-                'class':'form-control'
+                'class': 'form-control'
             })
         }

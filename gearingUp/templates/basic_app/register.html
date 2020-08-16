@@ -1,0 +1,23 @@
+{% extends "basic_app/base.html" %}
+
+{% block body %}
+<div class="jumbotron">
+  {% if registered %}
+    <h1>Thank you for registering with us</h1>
+  {% else %}
+    <h1 class="display-4">Register here. </h1>
+    <h3 class="lead">Fill out the form below</h3>
+    <hr class="my-4">
+      <form enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        <table>
+          {{user_form.as_table}}
+          {{user_profile_info_form.as_table}}
+        </table>
+        <input type="submit" class="btn btn-danger" name="" value="Submit">
+
+      </form>
+
+  {% endif %}
+</div>
+{% endblock %}
