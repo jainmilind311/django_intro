@@ -1,0 +1,19 @@
+{% extends 'basic_app/basic_app_base.html' %}
+
+
+{% block body %}
+
+<div class="jumbotron">
+  <h1 class="display-4">Welcome to the list of Schools</h1>
+  <p class="lead">Click on schools to view their details</p>
+  <hr class="my-4">
+  <ol>
+  {% for school in schools %}
+    <li><h1><a href="{{school.id}}">{{school.name}}</a></h1></li>
+  {% endfor %}
+  </ol>
+  <a class="btn btn-success" href="{% url 'basic_app:create'%}">Add School</a>
+</div>
+
+
+{% endblock %}
